@@ -11,6 +11,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue({
       template: { transformAssetUrls }
@@ -50,8 +51,8 @@ export default defineConfig({
       },
       manifest: {
         // 名稱
-        name: 'Pomodoro',
-        short_name: 'Pomodoro',
+        name: '番茄鐘',
+        short_name: '番茄鐘',
         // 工具列顏色
         theme_color: '#1867C0',
         // 啟動畫面的背景色
@@ -61,7 +62,19 @@ export default defineConfig({
         // PWA 顯示範圍，超出範圍會啟動瀏覽器
         scope: './',
         // 顯示方式
-        display: 'standalone'
+        display: 'standalone',
+        icons: [
+          {
+            src: './android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: './android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
       }
     })
   ],
